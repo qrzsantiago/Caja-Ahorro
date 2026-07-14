@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Caja de Ahorro</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6B21A8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header class="top-bar">
+        <button id="btn-menu" class="icon-btn">☰</button>
+        <h1 id="titulo-seccion">Inicio</h1>
+    </header>
+    <nav id="menu-lateral" class="oculto">
+        <ul>
+            <li><button class="nav-btn" data-target="seccion-inicio">Inicio</button></li>
+            <li><button class="nav-btn" data-target="seccion-socios">Socios</button></li>
+            <li><button class="nav-btn" data-target="seccion-ahorros">Ahorros</button></li>
+            <li><button class="nav-btn" data-target="seccion-creditos">Créditos</button></li>
+            <li><button class="nav-btn" data-target="seccion-retiros">Retiros</button></li>
+            <li><button class="nav-btn" data-target="seccion-calendario">Calendario</button></li>
+        </ul>
+    </nav>
+    <div id="overlay-menu" class="oculto"></div>
+    <main id="app-container">
+        <!-- Las secciones irán aquí (usa el código que te envié anteriormente para el contenido de las secciones) -->
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
