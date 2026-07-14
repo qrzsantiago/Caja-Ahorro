@@ -1,0 +1,78 @@
+:root {
+    --primario: #6B21A8;
+    --primario-claro: #9333EA;
+    --fondo: #F5F5DC; /* Beige */
+    --blanco: #FFFFFF;
+    --texto: #333333;
+    --verde: #22C55E;
+    --amarillo: #FACC15;
+    --rojo: #EF4444;
+    --azul-credito: #3B82F6;
+    --naranja-retiro: #F97316;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, sans-serif; font-size: 18px; }
+
+body { background-color: var(--fondo); color: var(--texto); overscroll-behavior-y: none; }
+
+/* Menú Superior */
+.top-bar { background-color: var(--primario); color: var(--blanco); padding: 15px 20px; display: flex; align-items: center; gap: 20px; position: sticky; top: 0; z-index: 100; }
+.icon-btn { background: none; border: none; color: var(--blanco); font-size: 32px; cursor: pointer; padding: 10px; }
+
+#menu-lateral { position: fixed; top: 0; left: 0; width: 80%; max-width: 350px; height: 100%; background-color: var(--blanco); z-index: 1000; transition: transform 0.3s ease; box-shadow: 2px 0 10px rgba(0,0,0,0.2); }
+#menu-lateral.oculto { transform: translateX(-100%); }
+#menu-lateral ul { list-style: none; padding: 20px 0; }
+#menu-lateral button { display: block; width: 100%; padding: 20px; text-align: left; background: none; border: none; font-size: 20px; border-bottom: 1px solid #EEE; color: var(--primario); font-weight: bold; }
+#overlay-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 999; }
+#overlay-menu.oculto { display: none; }
+
+.vista { display: none; padding: 20px; padding-bottom: 40px; }
+.vista.activa { display: block; }
+
+/* Botones Grandes S24 */
+button { border-radius: 12px; cursor: pointer; font-weight: bold; }
+.btn-gigante { width: 100%; min-height: 65px; font-size: 22px; border: none; color: var(--blanco); margin-bottom: 15px; }
+.btn-accion { background-color: var(--primario); }
+.btn-secundario { background-color: var(--blanco); border: 2px solid var(--primario); color: var(--primario); min-height: 55px; width: 100%; font-size: 18px; margin-bottom: 15px; }
+.btn-alerta { background-color: var(--rojo); }
+.btn-exportar { background-color: var(--primario-claro); margin-top: 20px; }
+
+/* Tarjetas y Formularios */
+.tarjeta { background: var(--blanco); padding: 25px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; }
+.tarjeta-doble { display: flex; gap: 15px; margin-bottom: 20px; }
+.tarjeta-doble .tarjeta { flex: 1; margin-bottom: 0; }
+.destacado { border-left: 6px solid var(--primario); }
+.destacado h2 { font-size: 32px; color: var(--primario); margin-top: 10px; }
+
+.formulario label { display: block; font-weight: bold; margin-bottom: 10px; color: var(--primario); }
+.formulario input, .formulario select { width: 100%; padding: 15px; min-height: 60px; font-size: 18px; border: 2px solid #DDD; border-radius: 12px; margin-bottom: 20px; background: var(--blanco); }
+
+/* Acordeón de Socios */
+details { background: var(--blanco); margin-bottom: 15px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+summary { padding: 20px; font-weight: bold; font-size: 20px; background: var(--primario); color: var(--blanco); list-style: none; cursor: pointer; }
+.lista-socios { list-style: none; padding: 10px 0; }
+.lista-socios li { padding: 20px; border-bottom: 1px solid #EEE; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 500; cursor: pointer; }
+.bolita-estado { width: 20px; height: 20px; border-radius: 50%; display: inline-block; }
+.estado-verde { background-color: var(--verde); }
+.estado-amarillo { background-color: var(--amarillo); }
+.estado-rojo { background-color: var(--rojo); }
+.mensaje-error { color: var(--rojo); font-weight: bold; }
+
+/* Widget Primera Semana Mes Siguiente */
+.widget-carrusel { background: var(--blanco); border-radius: 16px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.tira-horizontal { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 15px; padding-bottom: 10px; }
+.dia-widget { min-width: 120px; padding: 15px; background: var(--fondo); border-radius: 12px; text-align: center; scroll-snap-align: start; border: 1px solid #DDD; }
+.dia-widget h4 { font-size: 24px; color: var(--primario); }
+.punto-noti { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin: 5px 2px; }
+.noti-credito { background-color: var(--azul-credito); }
+.noti-retiro { background-color: var(--naranja-retiro); }
+
+/* Calendario */
+.calendario-controles { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.calendario-controles button { width: 60px; min-height: 60px; font-size: 24px; }
+.dias-semana { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: bold; margin-bottom: 10px; color: var(--primario); }
+.cuadricula { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.dia-cal { background: var(--blanco); height: 80px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 5px; cursor: pointer; font-weight: bold; border: 1px solid #EEE;}
+.burbuja-notificacion { color: white; border-radius: 10px; padding: 2px 8px; font-size: 12px; margin-top: 3px; width: 90%; text-align: center; }
+.burbuja-notificacion.c { background-color: var(--azul-credito); }
+.burbuja-notificacion.r { background-color: var(--naranja-retiro); }
